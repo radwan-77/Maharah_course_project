@@ -60,14 +60,12 @@ class HomePage extends StatelessWidget {
             height: 200,
             child: ListView.separated(
               padding: const EdgeInsets.symmetric(horizontal: 16),
-              separatorBuilder: (context, index) =>
-              const SizedBox(
+              separatorBuilder: (context, index) => const SizedBox(
                 width: 16,
               ),
               scrollDirection: Axis.horizontal,
               itemCount: 2,
-              itemBuilder: (context, index) =>
-              const SizedBox(
+              itemBuilder: (context, index) => const SizedBox(
                 child: _DevCoursesCard(
                   imageCard: 'assets/images/background.jpg',
                   name: 'Chat any thing',
@@ -104,10 +102,7 @@ class CourseTitles extends StatelessWidget {
           Text(
             "See all",
             style: TextStyle(
-                color: Theme
-                    .of(context)
-                    .colorScheme
-                    .primary,
+                color: Theme.of(context).colorScheme.primary,
                 fontWeight: FontWeight.w500,
                 fontSize: 16),
           )
@@ -140,58 +135,54 @@ class _DevCoursesCard extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-        Column(
-        children: [
-        Image.asset(
-          imageCard,
-          width: MediaQuery
-              .of(context)
-              .size
-              .width / 2,
-          height: 100,
-          fit: BoxFit.fill,
-        ),
-        Expanded(
-          child: Container(
-              color: Colors.grey.shade200,
-              ,
-              width: MediaQuery.of(context).size.width / 2,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(
-                horizontal: 16, vertical: 24) +
-                const EdgeInsets.only(top: 8),
-            child: Text(
-              name,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-              ),
+            Column(
+              children: [
+                Image.asset(
+                  imageCard,
+                  width: MediaQuery.of(context).size.width / 2,
+                  height: 100,
+                  fit: BoxFit.fill,
+                ),
+                Expanded(
+                  child: Container(
+                    color: Colors.grey.shade200,
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 24) +
+                          const EdgeInsets.only(top: 8),
+                      child: Text(
+                        name,
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                  ),
+                )
+              ],
             ),
-          ),
+            PositionedDirectional(
+              start: 16,
+              child: Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(24)),
+                child: Center(
+                  child: Image.asset(
+                    icon,
+                    width: 36,
+                    height: 36,
+                  ),
+                ),
+              ),
+            )
+          ],
         ),
-      )
-      ],
-    ),
-    PositionedDirectional(
-    start: 16,
-    child: Container(
-    width: 50,
-    height: 50,
-    decoration: BoxDecoration(
-    color: Colors.white,
-    borderRadius: BorderRadius.circular(24)),
-    child: Center(
-    child: Image.asset(
-    icon,
-    width: 36,
-    height: 36,
-    ),
-    ),
-    ),
-    )
-    ],
-    ),
-    ),
+      ),
     );
   }
 }
