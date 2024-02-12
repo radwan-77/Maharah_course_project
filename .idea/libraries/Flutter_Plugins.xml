@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$" />
+      <root url="file://$PROJECT_DIR$/android/app/src/main/java" />
+      <root url="file://$PROJECT_DIR$/build/app/generated/source/buildConfig/debug" />
+    </SOURCES>
+  </library>
+</component>
